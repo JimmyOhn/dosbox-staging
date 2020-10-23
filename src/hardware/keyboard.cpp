@@ -161,7 +161,7 @@ static void write_p60(Bitu port,Bitu val,Bitu iolen) {
 			keyb.repeat.rate = repeat[val&0x1f];
 			keyb.command=CMD_NONE;
 		}
-		/* Fallthrough! as setleds does what we want */
+		FALLTHROUGH; // SETLEDS does what we want
 	case CMD_SETLEDS:
 		keyb.command=CMD_NONE;
 		KEYBOARD_ClrBuffer();
